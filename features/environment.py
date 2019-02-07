@@ -24,8 +24,9 @@ def before_scenario(context, scenario):
     :param scenario: context
     :param context:scenario
     """
+
     if 'create_projects' in scenario.tags:
-        ProjectHelper.create_project('project.dateTime')
+        context.project_id = ProjectHelper.create_project('project.dateTime')
     if 'create_webhook' in scenario.tags:
         ProjectHelper.create_webhook('https://elvillano.dataTime.com')
     if 'create_membership' in scenario.tags:
@@ -41,5 +42,6 @@ def after_all(context):
     """
     Method for clear
     """
+    context.project_id = None
     ProjectHelper.clear_account()
     ProjectHelper.clear_account_memberships()

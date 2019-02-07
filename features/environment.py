@@ -1,14 +1,17 @@
+"""
+    enviroment
+"""
 import string
 from random import choices
 
 from core.utils.project_helper import ProjectHelper
 
-
-def before_all(context):
-    print("****************** PIVOTAL TRACKER API TESTING **************")
-
-
 def before_feature(context, feature):
+    """
+    Method run before feature
+    :param context: context
+    :param feature: feature
+    """
     if 'create_project' in feature.tags:
         context.project_id = ProjectHelper.create_project('project.dateTime')
     if 'accounts' in feature.tags:
@@ -16,8 +19,14 @@ def before_feature(context, feature):
 
 
 def before_scenario(context, scenario):
+    """
+    Method run before scenario
+    :param scenario: context
+    :param context:scenario
+    """
+
     if 'create_projects' in scenario.tags:
-        ProjectHelper.create_project('project.dateTime')
+        context.project_id = ProjectHelper.create_project('project.dateTime')
     if 'create_webhook' in scenario.tags:
         ProjectHelper.create_webhook('https://elvillano.dataTime.com')
     if 'create_membership' in scenario.tags:
@@ -30,5 +39,9 @@ def before_scenario(context, scenario):
 
 
 def after_all(context):
+    """
+    Method for clear
+    """
+    context.project_id = None
     ProjectHelper.clear_account()
     ProjectHelper.clear_account_memberships()

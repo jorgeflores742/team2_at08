@@ -1,0 +1,6 @@
+pylint
+requests
+jsonschema
+pyyaml
+compare
+behave

@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.6"
+cache: pip
+before_install:
+  - openssl aes-256-cbc -K $encrypted_1c60200ecebb_key -iv $encrypted_1c60200ecebb_iv
+    -in environment.yml.enc -out environment.yml -d
+install:
+  - pip install -r requirements.txt
+script:
+  - behave --no-capture --tags @smoke,@acceptance --tags ~@wip --summary
+notifications:
+  email: True

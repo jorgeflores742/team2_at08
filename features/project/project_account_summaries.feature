@@ -1,3 +1,4 @@
+@smoke
 Feature: Get account
 
   Scenario: Get Account

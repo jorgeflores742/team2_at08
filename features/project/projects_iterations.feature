@@ -1,3 +1,4 @@
+@smoke
 @create_project
 Feature: Return a set of iterations from the project. (Paginated)
 

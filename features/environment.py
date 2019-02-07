@@ -18,10 +18,11 @@ def before_feature(context, feature):
         ProjectHelper.set_account_data()
 
 
-def before_scenario(scenario):
+def before_scenario(context, scenario):
     """
     Method run before scenario
-    :param scenario:
+    :param scenario: context
+    :param context:scenario
     """
     if 'create_projects' in scenario.tags:
         ProjectHelper.create_project('project.dateTime')
@@ -36,7 +37,7 @@ def before_scenario(scenario):
         ProjectHelper.create_epic('epic.dateTime')
 
 
-def after_all():
+def after_all(context):
     """
     Method for clear
     """

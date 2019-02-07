@@ -42,7 +42,7 @@ Feature: Integrations
     """
     {
     "base_url":"https://elrincondejiraoculto.atlassian.net",
-    "name":"rinconcito"
+    "name":"rinconcitoa"
     }
     """
     When I send the request

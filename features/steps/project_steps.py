@@ -118,3 +118,10 @@ def verify_project_deleted(context):
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
 
+@step(u'I verify if the task was delete')
+def verify_task_deleted(context):
+    """
+        Method step implement to verify if task was delete
+    :param context: context
+    """
+    expect(204).__eq__(context.response.status_code)

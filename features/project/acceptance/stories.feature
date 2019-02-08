@@ -6,7 +6,7 @@ Feature: Get stories
     Given I set up a "GET" request to "/projects/$PROJECT_ID/stories?limit=1&with_state=unscheduled" endpoint
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Story" schema
+    And I validate with "Story GET" schema
 
   @create_projects
   Scenario: Post new stories
@@ -19,7 +19,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Story" schema
+    And I validate with "Story POST" schema
 
   @create_projects
   Scenario: Post new stories with parameters
@@ -34,11 +34,11 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Story" schema
+    And I validate with "Story POST" schema
 
   @create_projects @create_story
   Scenario: Get story with id parameter
     Given I set up a "GET" request to "/projects/$PROJECT_ID/stories/bulk?ids=$STORY_ID" endpoint
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Story" schema
+    And I validate with "Story GET" schema

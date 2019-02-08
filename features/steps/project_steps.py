@@ -97,5 +97,4 @@ def schema_validation(context, read_schema):
     """
     with open(definitions.SCHEMAS[read_schema]) as schema_creation:
         instance = context.response.json()
-        print("==========>"+str(instance))
         validate(instance, schema=json.load(schema_creation))

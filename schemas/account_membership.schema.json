@@ -1,0 +1,197 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "kind",
+      "id",
+      "person",
+      "account_id",
+      "created_at",
+      "updated_at",
+      "owner",
+      "admin",
+      "project_creator",
+      "timekeeper",
+      "time_enterer"
+    ],
+    "properties": {
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "account_membership"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          100
+        ]
+      },
+      "person": {
+        "$id": "#/items/properties/person",
+        "type": "object",
+        "title": "The Person Schema",
+        "required": [
+          "kind",
+          "id",
+          "name",
+          "email",
+          "initials",
+          "username"
+        ],
+        "properties": {
+          "kind": {
+            "$id": "#/items/properties/person/properties/kind",
+            "type": "string",
+            "title": "The Kind Schema",
+            "default": "",
+            "examples": [
+              "person"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "id": {
+            "$id": "#/items/properties/person/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "default": 0,
+            "examples": [
+              100
+            ]
+          },
+          "name": {
+            "$id": "#/items/properties/person/properties/name",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "Emperor Palpatine"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "email": {
+            "$id": "#/items/properties/person/properties/email",
+            "type": "string",
+            "title": "The Email Schema",
+            "default": "",
+            "examples": [
+              "emperor@galacticrepublic.gov"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "initials": {
+            "$id": "#/items/properties/person/properties/initials",
+            "type": "string",
+            "title": "The Initials Schema",
+            "default": "",
+            "examples": [
+              "EP"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "username": {
+            "$id": "#/items/properties/person/properties/username",
+            "type": "string",
+            "title": "The Username Schema",
+            "default": "",
+            "examples": [
+              "palpatine"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "account_id": {
+        "$id": "#/items/properties/account_id",
+        "type": "integer",
+        "title": "The Account_id Schema",
+        "default": 0,
+        "examples": [
+          100
+        ]
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2019-02-05T12:00:00Z"
+        ],
+        "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2019-02-05T12:00:00Z"
+        ],
+        "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
+      },
+      "owner": {
+        "$id": "#/items/properties/owner",
+        "type": "boolean",
+        "title": "The Owner Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "admin": {
+        "$id": "#/items/properties/admin",
+        "type": "boolean",
+        "title": "The Admin Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "project_creator": {
+        "$id": "#/items/properties/project_creator",
+        "type": "boolean",
+        "title": "The Project_creator Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "timekeeper": {
+        "$id": "#/items/properties/timekeeper",
+        "type": "boolean",
+        "title": "The Timekeeper Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "time_enterer": {
+        "$id": "#/items/properties/time_enterer",
+        "type": "boolean",
+        "title": "The Time_enterer Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

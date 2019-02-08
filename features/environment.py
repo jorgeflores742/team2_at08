@@ -6,6 +6,7 @@ from random import choices
 
 from core.utils.project_helper import ProjectHelper
 
+
 def before_feature(context, feature):
     """
     Method run before feature

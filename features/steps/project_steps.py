@@ -111,5 +111,9 @@ def verify_sent_data(context):
 
 @step(u'I verify if the project was delete')
 def verify_project_deleted(context):
+    """
+        Method step implement to verify if project was delete
+    :param context: context
+    """
     context.client.set_method('GET')
     expect(403).to_equal(context.client.execute_request().status_code)

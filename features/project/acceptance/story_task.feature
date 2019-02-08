@@ -35,7 +35,7 @@ Feature: Story task.
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Task" schema
-#    And I verify the sent data
+    And I verify the sent data
 
   @create_projects @create_story @create_task
   Scenario: Get task with id
@@ -57,11 +57,11 @@ Feature: Story task.
     When I send the request
     Then I get a "200" status code as response
     And I validate with "Task" schema
-#    And I verify the sent data
+    And I verify the sent data
 
   @create_projects @create_story @create_task
   Scenario: Delete an task
     Given I set up a "DELETE" request to "/projects/$PROJECT_ID/stories/$STORY_ID/tasks/$TASK_ID" endpoint
     When I send the request
     Then I get a "204" status code as response
-    And I verify if item was deleted
+    And I verify if the task was delete

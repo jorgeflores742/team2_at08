@@ -109,6 +109,16 @@ def verify_sent_data(context):
         expect(context.sent_data[key]).__eq__(context.response.json()[key])
 
 
+@step(u'I verify the sent data membership')
+def verify_sent_data(context):
+    """
+        Method step implement to verify sent data membership
+    :param context: context
+    """
+    for key in context.sent_data:
+        expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
+
+
 @step(u'I verify if the project was delete')
 def verify_project_deleted(context):
     """
@@ -117,6 +127,7 @@ def verify_project_deleted(context):
     """
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
+
 
 @step(u'I verify if the task was delete')
 def verify_task_deleted(context):

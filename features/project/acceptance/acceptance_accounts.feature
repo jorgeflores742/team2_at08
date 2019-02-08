@@ -1,4 +1,4 @@
-@acceptance1
+@acceptance
 @accounts
 Feature: Account acceptance test
 
@@ -31,9 +31,9 @@ Feature: Account acceptance test
     And I set up the data
       """
       {
-      "email":"machine123@mailinator.com",
-      "name":"machine123",
-      "initials":"MA"
+      "email":"team2at08@mailinator.com",
+      "name":"team2",
+      "initials":"at08"
       }
       """
     When I send the request

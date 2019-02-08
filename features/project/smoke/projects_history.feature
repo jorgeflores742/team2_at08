@@ -1,4 +1,4 @@
-git@smoke
+@smoke
 Feature: Returns per day information of story points and counts by state. If no start date or end date is provided, the
   project's most recent history is returned.
 

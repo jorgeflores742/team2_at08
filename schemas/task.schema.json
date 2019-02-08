@@ -1,0 +1,95 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "title": "The Root Schema",
+  "required": [
+    "kind",
+    "id",
+    "story_id",
+    "description",
+    "complete",
+    "position",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "task"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "default": 0,
+      "examples": [
+        64872336
+      ]
+    },
+    "story_id": {
+      "$id": "#/properties/story_id",
+      "type": "integer",
+      "title": "The Story_id Schema",
+      "default": 0,
+      "examples": [
+        163810574
+      ]
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "namess"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "complete": {
+      "$id": "#/properties/complete",
+      "type": "boolean",
+      "title": "The Complete Schema",
+      "default": false,
+      "examples": [
+        true
+      ],
+      "pattern": "^(true|false)$"
+    },
+    "position": {
+      "$id": "#/properties/position",
+      "type": "integer",
+      "title": "The Position Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-08T05:27:31Z"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The Updated_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-08T05:28:39Z"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

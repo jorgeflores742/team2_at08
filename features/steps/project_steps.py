@@ -104,7 +104,12 @@ def verify_sent_data(context):
     """
         Method step implement to verify sent data
     :param context: context
-    :return:
     """
     for key in context.sent_data:
         expect(context.sent_data[key]).to_equal(context.response.json()[key])
+
+
+@step(u'I verify if the project was delete')
+def verify_project_deleted(context):
+    context.client.set_method('GET')
+    expect(403).to_equal(context.client.execute_request().status_code)

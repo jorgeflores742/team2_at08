@@ -20,3 +20,9 @@ Feature: Project Acceptance Test
     Then I get a "200" status code as response
     And I validate with "Project" schema
     And I verify the sent data
+
+  Scenario: Delete an specified project
+    Given I set up a "DELETE" request to "/projects/$PROJECT_ID" endpoint
+    When I send the request
+    Then I get a "204" status code as response
+    And I verify if the project was delete

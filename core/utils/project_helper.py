@@ -186,7 +186,7 @@ class ProjectHelper:
         """
             Method for create stories in a project in pivotal tracker
         :param description: storie description
-        :return: id storie
+        :return: id story
         """
         client = RequestManager()
         body = {

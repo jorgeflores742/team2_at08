@@ -139,14 +139,13 @@ def verify_task_deleted(context):
 
 
 @step("I verify the sent data of epics")
-def verify_send_data_of_epics(context):
+def verify_send_data_epics(context):
     """
         :type context: context
     """
     LOGGER.info("Validation of sent data of epics")
-    sentData = context.sent_data
+    send_data = context.sent_data
     response = context.response.json()
     for i in response:
-        if i in sentData:
-            expect(response[i]).__eq__(sentData[i])
-
+        if i in send_data:
+            expect(response[i]).__eq__(send_data[i])

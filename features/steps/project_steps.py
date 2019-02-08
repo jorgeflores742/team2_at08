@@ -106,7 +106,7 @@ def verify_sent_data(context):
     :param context: context
     """
     for key in context.sent_data:
-        expect(context.sent_data[key]).to_equal(context.response.json()[key])
+        expect(context.sent_data[key]).__eq__(context.response.json()[key])
 
 
 @step(u'I verify if the project was delete')
@@ -116,4 +116,4 @@ def verify_project_deleted(context):
     :param context: context
     """
     context.client.set_method('GET')
-    expect(403).to_equal(context.client.execute_request().status_code)
+    expect(403).__eq__(int(context.client.execute_request().status_code))

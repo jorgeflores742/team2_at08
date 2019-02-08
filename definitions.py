@@ -14,5 +14,6 @@ SCHEMAS = {
     'Story GET':os.path.join(ROOT_DIR, 'schemas/story_get.schema.json'),
     'Story POST':os.path.join(ROOT_DIR, 'schemas/story_post.schema.json'),
     'Task':os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
-    'Story transitions':os.path.join(ROOT_DIR, 'schemas/story_transitions.schema.json')
+    'Story transitions':os.path.join(ROOT_DIR, 'schemas/story_transitions.schema.json'),
+    'Epic': os.path.join(ROOT_DIR, 'schemas/epic.schema.json')
 }

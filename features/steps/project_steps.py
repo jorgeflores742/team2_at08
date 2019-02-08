@@ -136,3 +136,16 @@ def verify_task_deleted(context):
     :param context: context
     """
     expect(204).__eq__(context.response.status_code)
+
+
+@step("I verify the sent data of epics")
+def verify_send_data_of_epics(context):
+    """
+    :type context: context
+    """
+    LOGGER.info("Validation of sent data of epics")
+    response = context.response.json()
+    print("type is:", type(response))
+    for item in response:
+        if item == "label":
+            expect(response[item]['name']).to_equal(response["label"]["name"])

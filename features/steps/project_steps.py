@@ -96,4 +96,5 @@ def schema_validation(context, read_schema):
     :param read_schema: read schema
     """
     with open(definitions.SCHEMAS[read_schema]) as schema_creation:
-        validate(instance=context.response.json(), schema=json.load(schema_creation))
+        instance = context.response.json()
+        validate(instance, schema=json.load(schema_creation))

@@ -22,7 +22,7 @@
       "examples": [
         "2019-01-29T12:00:00Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     },
     "id": {
       "$id": "#/properties/id",
@@ -46,6 +46,8 @@
     "name": {
       "$id": "#/properties/name",
       "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
       "title": "The Name Schema",
       "default": "",
       "examples": [
@@ -71,7 +73,7 @@
       "examples": [
         "active"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(active|suspended|delinquent|deleted|limited)$"
     },
     "updated_at": {
       "$id": "#/properties/updated_at",
@@ -81,7 +83,7 @@
       "examples": [
         "2019-01-31T14:53:40Z"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)$"
     }
   },
   "additionalProperties": false

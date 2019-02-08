@@ -95,6 +95,17 @@ def schema_validation(context, read_schema):
     :param context: context
     :param read_schema: read schema
     """
+    LOGGER.info("Validation with schema {0}".format(read_schema))
     with open(definitions.SCHEMAS[read_schema]) as schema_creation:
         instance = context.response.json()
         validate(instance, schema=json.load(schema_creation))
+
+@step(u'I verify if item was deleted')
+def verify_item_deleted(context):
+    """
+    Verification if the resources was deleted
+    """
+    LOGGER.info("Validation of delete resource")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(404).to_equal(response.status_code)

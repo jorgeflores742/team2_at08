@@ -36,6 +36,10 @@ def before_scenario(context, scenario):
                                          "".join(choices(string.ascii_letters + string.digits, k=10)))
     if 'create_epic' in scenario.tags:
         ProjectHelper.create_epic('epic.dateTime')
+    if 'create_story' in scenario.tags:
+        ProjectHelper.create_story('story'.join(choices(string.ascii_letters + string.digits, k=5)))
+    if 'create_task' in scenario.tags:
+        ProjectHelper.create_task('task'.join(choices(string.ascii_letters + string.digits, k=5)))
 
 
 def after_all(context):

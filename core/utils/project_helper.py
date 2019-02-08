@@ -23,6 +23,7 @@ class ProjectHelper:
     webhook_id = None
     membership_id = None
     epic_id = None
+    story_id = None
 
     @staticmethod
     def create_project(name):
@@ -181,7 +182,7 @@ class ProjectHelper:
         CONTAINER_ID.add_value('$MEMBERSHIP_ID_FOR_ACCOUNT', membership_id)
 
     @staticmethod
-    def create_stories(description):
+    def create_story(description):
         """
             Method for create stories in a project in pivotal tracker
         :param description: storie description
@@ -192,9 +193,24 @@ class ProjectHelper:
             'name': commons.get_unique_name(description)
         }
         client.set_method('POST')
-        client.set_endpoint('/stories')
+        client.set_endpoint("/projects/{0}/stories".format(ProjectHelper.project_id))
         client.set_body(json.dumps(body))
         response = client.execute_request()
         CONTAINER_ID.add_value("$STORY_ID", response.json()['id'])
-        ProjectHelper.project_id = response.json()['id']
+        ProjectHelper.story_id = response.json()['id']
         return response.json()['id']
+
+    @staticmethod
+    def create_task(name):
+        """
+            Method for create task in a project in pivotal tracker
+        """
+        client = RequestManager()
+        body = {
+            "description": name
+        }
+        client.set_method("POST")
+        client.set_endpoint("/projects/{0}/stories/{1}/tasks".format(ProjectHelper.project_id, ProjectHelper.story_id))
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        CONTAINER_ID.add_value("$TASK_ID", response.json()['id'])

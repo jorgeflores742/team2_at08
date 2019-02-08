@@ -31,4 +31,9 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "200" status code as response
-    
+
+  @create_projects @create_story
+  Scenario: Get story specified in id parameter
+    Given I set up a "GET" request to "/projects/$PROJECT_ID/stories/bulk?ids=$STORY_ID" endpoint
+    When I send the request
+    Then I get a "200" status code as response

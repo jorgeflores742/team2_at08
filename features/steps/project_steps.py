@@ -110,7 +110,7 @@ def verify_sent_data(context):
 
 
 @step(u'I verify the sent data membership')
-def verify_sent_data(context):
+def verify_sent_data_membership(context):
     """
         Method step implement to verify sent data membership
     :param context: context

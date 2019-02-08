@@ -84,8 +84,8 @@ def step_impl_all(context):
     :param context: context
     """
     LOGGER.info("Add Data to request")
-    body = json.loads(context.text)
-    context.client.set_body(json.dumps(body))
+    context.sent_data = json.loads(context.text)
+    context.client.set_body(json.dumps(context.sent_data))
 
 
 @step(u'I validate with "{read_schema}" schema')
@@ -95,5 +95,16 @@ def schema_validation(context, read_schema):
     :param context: context
     :param read_schema: read schema
     """
-    with open(definitions.SCHEMAS[read_schema]) as schema_creation:
-        validate(instance=context.response.json(), schema=json.load(schema_creation))
+    with open(definitions.SCHEMAS[read_schema]) as schema:
+        validate(instance=context.response.json(), schema=json.load(schema))
+
+
+@step(u'I verify the sent data')
+def verify_sent_data(context):
+    """
+        Method step implement to verify sent data
+    :param context: context
+    :return:
+    """
+    for key in context.sent_data:
+        expect(context.sent_data[key]).to_equal(context.response.json()[key])

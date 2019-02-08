@@ -8,8 +8,7 @@ Feature: Positive test of Epic feature
     """
     {
       "name": "Name epic",
-      "description": "This is a description",
-      "label":{"name":"name label"}
+      "description": "This is a description"
     }
     """
     When I send the request

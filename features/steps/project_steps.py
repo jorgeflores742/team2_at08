@@ -117,3 +117,4 @@ def verify_project_deleted(context):
     """
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
+

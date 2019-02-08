@@ -2,23 +2,51 @@
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
-  "type": "object",
   "title": "The Root Schema",
   "required": [
-    "kind",
-    "id",
-    "project_id",
-    "name",
-    "story_type",
-    "current_state",
-    "requested_by_id",
-    "owner_ids",
-    "labels",
     "created_at",
+    "current_state",
+    "id",
+    "kind",
+    "labels",
+    "name",
+    "owner_ids",
+    "project_id",
+    "requested_by_id",
+    "story_type",
     "updated_at",
     "url"
   ],
   "properties": {
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-08T15:24:26Z"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "current_state": {
+      "$id": "#/properties/current_state",
+      "type": "string",
+      "title": "The Current_state Schema",
+      "default": "",
+      "examples": [
+        "accepted"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "default": 0,
+      "examples": [
+        163826622
+      ]
+    },
     "kind": {
       "$id": "#/properties/kind",
       "type": "string",
@@ -29,23 +57,10 @@
       ],
       "pattern": "^(.*)$"
     },
-    "id": {
-      "$id": "#/properties/id",
-      "type": "integer",
-      "title": "The Id Schema",
-      "default": 0,
-      "examples": [
-        163810574
-      ]
-    },
-    "project_id": {
-      "$id": "#/properties/project_id",
-      "type": "integer",
-      "title": "The Project_id Schema",
-      "default": 0,
-      "examples": [
-        2256970
-      ]
+    "labels": {
+      "$id": "#/properties/labels",
+      "type": "array",
+      "title": "The Labels Schema"
     },
     "name": {
       "$id": "#/properties/name",
@@ -53,9 +68,32 @@
       "title": "The Name Schema",
       "default": "",
       "examples": [
-        "xxxstory"
+        "name acceptance story"
       ],
       "pattern": "^(.*)$"
+    },
+    "owner_ids": {
+      "$id": "#/properties/owner_ids",
+      "type": "array",
+      "title": "The Owner_ids Schema"
+    },
+    "project_id": {
+      "$id": "#/properties/project_id",
+      "type": "integer",
+      "title": "The Project_id Schema",
+      "default": 0,
+      "examples": [
+        2263245
+      ]
+    },
+    "requested_by_id": {
+      "$id": "#/properties/requested_by_id",
+      "type": "integer",
+      "title": "The Requested_by_id Schema",
+      "default": 0,
+      "examples": [
+        3145683
+      ]
     },
     "story_type": {
       "$id": "#/properties/story_type",
@@ -67,52 +105,13 @@
       ],
       "pattern": "^(.*)$"
     },
-    "current_state": {
-      "$id": "#/properties/current_state",
-      "type": "string",
-      "title": "The Current_state Schema",
-      "default": "",
-      "examples": [
-        "unscheduled"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "requested_by_id": {
-      "$id": "#/properties/requested_by_id",
-      "type": "integer",
-      "title": "The Requested_by_id Schema",
-      "default": 0,
-      "examples": [
-        3143894
-      ]
-    },
-    "owner_ids": {
-      "$id": "#/properties/owner_ids",
-      "type": "array",
-      "title": "The Owner_ids Schema"
-    },
-    "labels": {
-      "$id": "#/properties/labels",
-      "type": "array",
-      "title": "The Labels Schema"
-    },
-    "created_at": {
-      "$id": "#/properties/created_at",
-      "type": "string",
-      "title": "The Created_at Schema",
-      "default": "",
-      "examples": [
-        "2019-02-08T03:12:33Z"
-      ],
-      "pattern": "^(.*)$"
-    },
     "updated_at": {
       "$id": "#/properties/updated_at",
       "type": "string",
       "title": "The Updated_at Schema",
       "default": "",
       "examples": [
-        "2019-02-08T03:12:33Z"
+        "2019-02-08T15:24:26Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -122,9 +121,9 @@
       "title": "The Url Schema",
       "default": "",
       "examples": [
-        "https://www.pivotaltracker.com/story/show/163810574"
+        "https://www.pivotaltracker.com/story/show/163826622"
       ],
       "pattern": "^(.*)$"
     }
-  }
+  }, "additionalProperties": false
 }

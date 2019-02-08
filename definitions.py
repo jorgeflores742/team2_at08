@@ -11,8 +11,7 @@ SCHEMAS = {
     'Account_membership': os.path.join(ROOT_DIR, 'schemas/account_membership.schema.json'),
     'Account_membership_create': os.path.join(ROOT_DIR, 'schemas/account_membership_email.schema.json'),
     'Project': os.path.join(ROOT_DIR, 'schemas/projects.schema.json'),
-    'Story GET':os.path.join(ROOT_DIR, 'schemas/story_get.schema.json'),
-    'Story POST':os.path.join(ROOT_DIR, 'schemas/story_post.schema.json'),
-    'Task':os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
-    'Story transitions':os.path.join(ROOT_DIR, 'schemas/story_transitions.schema.json')
+    'Story': os.path.join(ROOT_DIR, 'schemas/story.schema.json'),
+    'Task': os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
+    'Story transitions': os.path.join(ROOT_DIR, 'schemas/story_transitions.schema.json')
 }

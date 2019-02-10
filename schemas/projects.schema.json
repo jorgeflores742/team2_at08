@@ -88,6 +88,17 @@
         15
       ]
     },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "maxLength": 140,
+      "default": "",
+      "examples": [
+        "Expeditionary Battle Planetoid"
+      ],
+      "pattern": "^(.*)$"
+    },
     "enable_following": {
       "$id": "#/properties/enable_following",
       "type": "boolean",
@@ -166,6 +177,7 @@
       "type": "string",
       "title": "The Name Schema",
       "default": "",
+      "maxLength": 50,
       "examples": [
         "Death Star"
       ],

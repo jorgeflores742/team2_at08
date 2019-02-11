@@ -95,6 +95,7 @@ def schema_validation(context, read_schema):
     :param context: context
     :param read_schema: read schema
     """
+    LOGGER.info("Validation of schema")
     with open(definitions.SCHEMAS[read_schema]) as schema:
         validate(instance=context.response.json(), schema=json.load(schema))
 
@@ -105,6 +106,7 @@ def verify_sent_data(context):
         Method step implement to verify sent data
     :param context: context
     """
+    LOGGER.info("Validation of sent data")
     for key in context.sent_data:
         expect(context.sent_data[key]).__eq__(context.response.json()[key])
 
@@ -115,6 +117,7 @@ def verify_sent_data_membership(context):
         Method step implement to verify sent data membership
     :param context: context
     """
+    LOGGER.info("Validation of sent data membership")
     for key in context.sent_data:
         expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
 
@@ -125,17 +128,20 @@ def verify_project_deleted(context):
         Method step implement to verify if project was delete
     :param context: context
     """
+    LOGGER.info("Validation of project delete")
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
 
-
-@step(u'I verify if the task was delete')
-def verify_task_deleted(context):
+@step(u'I verify if the item was delete')
+def verify_item_deleted(context):
     """
         Method step implement to verify if task was delete
     :param context: context
     """
-    expect(204).__eq__(context.response.status_code)
+    LOGGER.info("Validation of delete")
+    context.client.set_method('GET')
+    response = context.client.execute_request()
+    expect(404).__eq__(response.status_code)
 
 
 @step("I verify the sent data of epics")

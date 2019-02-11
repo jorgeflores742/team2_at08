@@ -21,7 +21,7 @@ Feature: Story
     """
     When I send the request
     Then I get a "200" status code as response
-    And I validate with "Story_parameters" schema
+    And I validate with "Story" schema
     And I verify the sent data
 
   @create_projects @create_story

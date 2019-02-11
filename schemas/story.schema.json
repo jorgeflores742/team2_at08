@@ -56,6 +56,16 @@
       ],
       "pattern": "^(.*)$"
     },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "this is my description"
+      ],
+      "pattern": "^(.*)$"
+    },
     "story_type": {
       "$id": "#/properties/story_type",
       "type": "string",
@@ -75,6 +85,15 @@
         "unscheduled"
       ],
       "pattern": "^(.*)$"
+    },
+    "estimate": {
+      "$id": "#/properties/estimate",
+      "type": "integer",
+      "title": "The Estimate Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
     },
     "requested_by_id": {
       "$id": "#/properties/requested_by_id",

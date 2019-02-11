@@ -35,7 +35,8 @@ class ProjectHelper:
         client = RequestManager()
         body = {
             'name': commons.get_unique_name(name),
-            'project_type': 'public'
+            'project_type': 'public',
+            'automatic_planning':False
         }
         client.set_method('POST')
         client.set_endpoint('/projects')

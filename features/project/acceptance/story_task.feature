@@ -1,4 +1,4 @@
-@acceptance
+@acceptances
 Feature: Story task.
 
   @create_projects @create_story @create_task
@@ -64,4 +64,4 @@ Feature: Story task.
     Given I set up a "DELETE" request to "/projects/$PROJECT_ID/stories/$STORY_ID/tasks/$TASK_ID" endpoint
     When I send the request
     Then I get a "204" status code as response
-    And I verify if the task was delete
+    And I verify if the item was delete

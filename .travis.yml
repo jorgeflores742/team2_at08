@@ -9,6 +9,6 @@ install:
   - pip install -r requirements.txt
 script:
   - pylint --output-format=parseable team2_at08
-  - behave --no-capture --tags @smoke,@acceptance --tags ~@wip --summary
+  - behave --no-capture --tags @smoke,@acceptance,@positive,@negative --tags ~@wip --summary
 notifications:
   email: True

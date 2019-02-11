@@ -1,4 +1,4 @@
-@smoke
+@acceptances
 Feature: Story
 
   @create_projects @create_story
@@ -28,4 +28,5 @@ Feature: Story
     Given I set up a "DELETE" request to "/projects/$PROJECT_ID/stories/$STORY_ID" endpoint
     When I send the request
     Then I get a "204" status code as response
+    And I verify if the item was delete
 

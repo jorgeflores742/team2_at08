@@ -43,3 +43,18 @@ Feature: Change project start date
     Then I get a "200" status code as response
     And I validate with "Project" schema
     And I verify the sent data
+
+  @create_projects
+  Scenario: Change custom point scale from GET specified project
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "point_scale_is_custom": true,
+      "point_scale": "3,6,9"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent data

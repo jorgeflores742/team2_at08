@@ -200,7 +200,7 @@
       "examples": [
         "0,1,2,3"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "[0-9]+(,[0-9]+)*"
     },
     "point_scale_is_custom": {
       "$id": "#/properties/point_scale_is_custom",

@@ -41,6 +41,7 @@ def step_impl_2(context, status_code):
     """
     LOGGER.info("Validation Status Code")
     expect(int(status_code)).__eq__(context.response.status_code)
+    print(status_code)
 
 
 @step(u'I set up a retrieve of all Projects')
@@ -159,3 +160,13 @@ def verify_send_data_epics(context):
     for i in response:
         if i in send_data:
             expect(response[i]).__eq__(send_data[i])
+
+
+@step('I set up "{key}" the data')
+def step_impl(context, key):
+    """
+    :type context: behave.runner.Context
+    :type key: key
+    """
+    context.sent_data = json.loads(str(context.text).replace(key, CONTAINER_ID.get_value(key)))
+    context.client.set_body(json.dumps(context.sent_data))

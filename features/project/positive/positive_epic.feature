@@ -1,14 +1,14 @@
 @positive
 Feature: Positive test of Epic feature
 
-  @create_projects
-  Scenario: Create epic with a specific name and description
-    Given I set up a "POST" request to "/projects/$PROJECT_ID/epics/" endpoint
+  @create_projects @create_epic
+  Scenario: Update epic name label description
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID/epics/$EPIC_ID" endpoint
     And I set up the data
     """
     {
-      "name": "Name epic test",
-      "description":"Description for this epic."
+      "name": "Name epic",
+      "description": "This is a description"
     }
     """
     When I send the request

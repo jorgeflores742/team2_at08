@@ -23,6 +23,7 @@ class ProjectHelper:
     webhook_id = None
     membership_id = None
     epic_id = None
+    epic_id_name = None
     story_id = None
 
     @staticmethod
@@ -122,8 +123,9 @@ class ProjectHelper:
         :param name: name epic
         """
         client = RequestManager()
+        CONTAINER_ID.add_value("$EPIC_NAME", commons.get_unique_name(name))
         body = {
-            'name': commons.get_unique_name(name)
+            'name': CONTAINER_ID.get_value("$EPIC_NAME")
         }
         client.set_method('POST')
         client.set_endpoint('/projects/{0}/epics'.format(ProjectHelper.project_id))

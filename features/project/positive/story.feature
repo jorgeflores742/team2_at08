@@ -20,7 +20,9 @@ Feature: Story
       |  delivered      | bug |
       |  unstarted      | bug |
       |  rejected       | bug |
+      |  accepted       | bug |
       |  started        | bug |
+      |  accepted       | bug |
       |  finished       | bug |
       |  planned        | bug |
       |  unscheduled    | bug |
@@ -28,10 +30,14 @@ Feature: Story
       |  planned        | feature |
       |  unscheduled    | feature |
       |  unstarted      | chore |
+      |  accepted       | chore |
       |  started        | chore |
+      |  accepted       | chore |
       |  planned        | chore |
       |  unscheduled    | chore |
       |  unstarted      | release |
+      |  accepted       | release |
+      |  accepted       | release |
       |  planned        | release |
       |  unscheduled    | release |
 

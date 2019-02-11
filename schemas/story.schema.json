@@ -1,5 +1,4 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
   "title": "The Root Schema",
@@ -109,6 +108,15 @@
       "type": "array",
       "title": "The Owner_ids Schema"
     },
+    "owned_by_id": {
+      "$id": "#/properties/owned_by_id",
+      "type": "integer",
+      "title": "The Owned_by_id Schema",
+      "default": 0,
+      "examples": [
+        3142814
+      ]
+    },
     "labels": {
       "$id": "#/properties/labels",
       "type": "array",
@@ -144,5 +152,5 @@
       ],
       "pattern": "^(.*)$"
     }
-  },"additionalProperties": false
+  }
 }

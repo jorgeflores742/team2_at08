@@ -13,6 +13,7 @@ Feature: Story task.
     """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 
 
   @create_projects @create_story
@@ -28,6 +29,7 @@ Feature: Story task.
     """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 
 
   @create_projects @create_story @create_task @create_task
@@ -43,4 +45,5 @@ Feature: Story task.
     """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 

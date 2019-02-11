@@ -3,7 +3,7 @@ Feature: Get stories
 
 
   @create_projects
-  Scenario: Post new stories with 1 characters of name-1
+  Scenario: Post new stories with name number
     Given I set up a "POST" request to "/projects/$PROJECT_ID/stories" endpoint
     And I set up the data
       """
@@ -13,9 +13,10 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 
   @create_projects
-  Scenario: Post new stories with 5000 characters of name0
+  Scenario: Post new stories with name empty
     Given I set up a "POST" request to "/projects/$PROJECT_ID/stories" endpoint
     And I set up the data
       """
@@ -25,6 +26,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 
   @create_projects
   Scenario: Post new stories with parameters with name, description, estimate and current state like to desconocido
@@ -40,6 +42,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema
 
   @create_projects
   Scenario: Post new stories with parameters with name, description, estimate and current state like to number
@@ -55,3 +58,4 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema

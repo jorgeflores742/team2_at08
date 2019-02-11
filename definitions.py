@@ -13,7 +13,6 @@ SCHEMAS = {
     'Project': os.path.join(ROOT_DIR, 'schemas/projects.schema.json'),
     'Story': os.path.join(ROOT_DIR, 'schemas/story.schema.json'),
     'Task': os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
-    'Story transitions': os.path.join(ROOT_DIR, 'schemas/story_transitions.schema.json'),
     'Epic': os.path.join(ROOT_DIR, 'schemas/epic.schema.json'),
     'Error unfound resource': os.path.join(ROOT_DIR, 'schemas/error_unfound.schema.json')
 }

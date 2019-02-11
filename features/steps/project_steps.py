@@ -132,6 +132,7 @@ def verify_project_deleted(context):
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
 
+
 @step(u'I verify if the item was delete')
 def verify_item_deleted(context):
     """
@@ -140,8 +141,8 @@ def verify_item_deleted(context):
     """
     LOGGER.info("Validation of delete")
     context.client.set_method('GET')
-    response = context.client.execute_request()
-    expect(404).__eq__(response.status_code)
+    context.response = context.client.execute_request()
+    expect(404).__eq__(context.response.status_code)
 
 
 @step("I verify the sent data of epics")

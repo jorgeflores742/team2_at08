@@ -1,4 +1,4 @@
-@acceptances
+@acceptance
 Feature: Story
 
   @create_projects @create_story

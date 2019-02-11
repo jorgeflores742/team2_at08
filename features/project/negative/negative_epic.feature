@@ -12,3 +12,4 @@ Feature: Positive test of Epic feature
     """
     When I send the request
     Then I get a "400" status code as response
+    And I validate with "Error unfound resource" schema

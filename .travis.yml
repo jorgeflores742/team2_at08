@@ -12,3 +12,4 @@ script:
   - behave --no-capture --tags @smoke,@acceptance,@positive,@negative --tags ~@wip --summary
 notifications:
   email: True
+  

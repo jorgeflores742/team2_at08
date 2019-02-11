@@ -13,6 +13,8 @@ def before_feature(context, feature):
     :param context: context
     :param feature: feature
     """
+    if 'create_project' in feature.tags:
+        context.project_id = ProjectHelper.create_project('project.dateTime')
     if 'accounts' in feature.tags:
         ProjectHelper.set_account_data()
 

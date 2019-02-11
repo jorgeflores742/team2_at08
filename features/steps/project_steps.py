@@ -119,7 +119,10 @@ def verify_sent_data_membership(context):
     """
     LOGGER.info("Validation of sent data membership")
     for key in context.sent_data:
-        expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
+        if key == 'person_id':
+            expect(context.sent_data[key]).__eq__(context.response.json()['person']['id'])
+        else:
+            expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
 
 
 @step(u'I verify if the project was delete')

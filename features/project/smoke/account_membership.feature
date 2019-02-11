@@ -1,4 +1,4 @@
-@smokee
+@smoke
 @accounts
 Feature: Account Memberships
 

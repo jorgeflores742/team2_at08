@@ -1,4 +1,4 @@
-@acceptance1
+@acceptance
 @accounts
 Feature: Account acceptance test
 

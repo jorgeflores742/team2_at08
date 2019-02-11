@@ -1,4 +1,4 @@
-@acceptances
+@acceptance
 Feature: Story task.
 
   @create_projects @create_story @create_task

@@ -119,7 +119,10 @@ def verify_sent_data_membership(context):
     """
     LOGGER.info("Validation of sent data membership")
     for key in context.sent_data:
-        expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
+        if key == 'person_id':
+            expect(context.sent_data[key]).__eq__(context.response.json()['person']['id'])
+        else:
+            expect(context.sent_data[key]).__eq__(context.response.json()['person'][key])
 
 
 @step(u'I verify if the project was delete')
@@ -132,6 +135,7 @@ def verify_project_deleted(context):
     context.client.set_method('GET')
     expect(403).__eq__(int(context.client.execute_request().status_code))
 
+
 @step(u'I verify if the item was delete')
 def verify_item_deleted(context):
     """
@@ -140,8 +144,8 @@ def verify_item_deleted(context):
     """
     LOGGER.info("Validation of delete")
     context.client.set_method('GET')
-    response = context.client.execute_request()
-    expect(404).__eq__(response.status_code)
+    context.response = context.client.execute_request()
+    expect(404).__eq__(context.response.status_code)
 
 
 @step("I verify the sent data of epics")

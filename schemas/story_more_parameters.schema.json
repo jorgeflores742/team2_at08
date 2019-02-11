@@ -2,7 +2,6 @@
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
-  "type": "object",
   "title": "The Root Schema",
   "required": [
     "kind",
@@ -11,6 +10,8 @@
     "name",
     "story_type",
     "current_state",
+    "estimate",
+    "accepted_at",
     "requested_by_id",
     "owner_ids",
     "labels",
@@ -35,7 +36,7 @@
       "title": "The Id Schema",
       "default": 0,
       "examples": [
-        163810574
+        163851372
       ]
     },
     "project_id": {
@@ -44,7 +45,7 @@
       "title": "The Project_id Schema",
       "default": 0,
       "examples": [
-        2256970
+        2244983
       ]
     },
     "name": {
@@ -53,7 +54,7 @@
       "title": "The Name Schema",
       "default": "",
       "examples": [
-        "xxxstory"
+        "story with esstimate"
       ],
       "pattern": "^(.*)$"
     },
@@ -73,7 +74,26 @@
       "title": "The Current_state Schema",
       "default": "",
       "examples": [
-        "unscheduled"
+        "accepted"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "estimate": {
+      "$id": "#/properties/estimate",
+      "type": "integer",
+      "title": "The Estimate Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "accepted_at": {
+      "$id": "#/properties/accepted_at",
+      "type": "string",
+      "title": "The Accepted_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-11T00:48:56Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -102,7 +122,7 @@
       "title": "The Created_at Schema",
       "default": "",
       "examples": [
-        "2019-02-08T03:12:33Z"
+        "2019-02-11T00:48:56Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -112,7 +132,7 @@
       "title": "The Updated_at Schema",
       "default": "",
       "examples": [
-        "2019-02-08T03:12:33Z"
+        "2019-02-11T00:48:56Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -122,7 +142,7 @@
       "title": "The Url Schema",
       "default": "",
       "examples": [
-        "https://www.pivotaltracker.com/story/show/163810574"
+        "https://www.pivotaltracker.com/story/show/163851372"
       ],
       "pattern": "^(.*)$"
     }

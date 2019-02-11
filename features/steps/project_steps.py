@@ -95,6 +95,7 @@ def schema_validation(context, read_schema):
     :param context: context
     :param read_schema: read schema
     """
+    print("---->" + json.dumps(context.response.json(), sort_keys=False, indent=4, separators=(',', ': ')))
     with open(definitions.SCHEMAS[read_schema]) as schema:
         validate(instance=context.response.json(), schema=json.load(schema))
 

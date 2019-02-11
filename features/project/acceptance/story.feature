@@ -1,4 +1,4 @@
-@acceptances
+@acceptance
 Feature: Story
 
   @create_projects @create_story
@@ -15,7 +15,8 @@ Feature: Story
     """
     {
     "current_state":"accepted",
-    "estimate":1
+    "estimate":1,
+    "description":"this is my description"
     }
     """
     When I send the request

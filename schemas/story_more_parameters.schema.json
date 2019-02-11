@@ -8,10 +8,10 @@
     "id",
     "project_id",
     "name",
+    "description",
     "story_type",
     "current_state",
     "estimate",
-    "accepted_at",
     "requested_by_id",
     "owner_ids",
     "labels",
@@ -36,7 +36,7 @@
       "title": "The Id Schema",
       "default": 0,
       "examples": [
-        163851372
+        163853926
       ]
     },
     "project_id": {
@@ -54,7 +54,17 @@
       "title": "The Name Schema",
       "default": "",
       "examples": [
-        "story with esstimate"
+        "Exhaust ports area ray shielded�12�"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "this is my description"
       ],
       "pattern": "^(.*)$"
     },
@@ -74,7 +84,7 @@
       "title": "The Current_state Schema",
       "default": "",
       "examples": [
-        "accepted"
+        "delivered"
       ],
       "pattern": "^(.*)$"
     },
@@ -86,16 +96,6 @@
       "examples": [
         1
       ]
-    },
-    "accepted_at": {
-      "$id": "#/properties/accepted_at",
-      "type": "string",
-      "title": "The Accepted_at Schema",
-      "default": "",
-      "examples": [
-        "2019-02-11T00:48:56Z"
-      ],
-      "pattern": "^(.*)$"
     },
     "requested_by_id": {
       "$id": "#/properties/requested_by_id",
@@ -122,7 +122,7 @@
       "title": "The Created_at Schema",
       "default": "",
       "examples": [
-        "2019-02-11T00:48:56Z"
+        "2019-02-11T04:30:09Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -132,7 +132,7 @@
       "title": "The Updated_at Schema",
       "default": "",
       "examples": [
-        "2019-02-11T00:48:56Z"
+        "2019-02-11T04:30:09Z"
       ],
       "pattern": "^(.*)$"
     },
@@ -142,7 +142,7 @@
       "title": "The Url Schema",
       "default": "",
       "examples": [
-        "https://www.pivotaltracker.com/story/show/163851372"
+        "https://www.pivotaltracker.com/story/show/163853926"
       ],
       "pattern": "^(.*)$"
     }

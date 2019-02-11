@@ -31,7 +31,8 @@ Feature: Get stories
       {
       "current_state":"accepted",
       "estimate":1,
-      "name":"Exhaust ports are ray shielded👹"
+      "name":"Exhaust ports are ray shielded👹",
+      "description":"this is my description"
       }
       """
     When I send the request

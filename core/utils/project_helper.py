@@ -217,3 +217,18 @@ class ProjectHelper:
         client.set_body(json.dumps(body))
         response = client.execute_request()
         CONTAINER_ID.add_value("$TASK_ID", response.json()['id'])
+
+    @staticmethod
+    def create_membership_in_an_account():
+        """
+                    Method for create a membership in pivotal tracker
+                """
+        client = RequestManager()
+        body = {
+            "person_id": CONTAINER_ID.get_value("$MEMBERSHIP_ID_FOR_ACCOUNT"),
+        }
+        client.set_method('POST')
+        client.set_endpoint('/accounts/{0}/memberships'.format(CONTAINER_ID.get_value('$ACCOUNT_ID')))
+        client.set_body(json.dumps(body))
+        response = client.execute_request()
+        ProjectHelper.membership_id = response.json()['id']

@@ -1,0 +1,66 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "code",
+    "error",
+    "general_problem",
+    "kind",
+    "requirement"
+  ],
+  "properties": {
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string",
+      "title": "The Code Schema",
+      "default": "",
+      "examples": [
+        "invalid_parameter"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": "string",
+      "title": "The Error Schema",
+      "default": "",
+      "examples": [
+        "One or more request parameters was missing or invalid."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "general_problem": {
+      "$id": "#/properties/general_problem",
+      "type": "string",
+      "title": "The General_problem Schema",
+      "default": "",
+      "examples": [
+        "This extended_string is too long: 'Aliquam vitae congue ligula. Nunc porta velit dolor.'"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "error"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "requirement": {
+      "$id": "#/properties/requirement",
+      "type": "string",
+      "title": "The Requirement Schema",
+      "default": "",
+      "examples": [
+        "'name' parameter must be 50 characters or less."
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

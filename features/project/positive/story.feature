@@ -2,7 +2,7 @@
 Feature: Story
 
   @create_projects @create_story
-  Scenario Outline: Put story with parameters current_state and story_type combination 1
+  Scenario Outline: Put story with parameters current_state and story_type combinations
     Given I set up a "PUT" request to "/projects/$PROJECT_ID/stories/$STORY_ID" endpoint
     And I set up the data
     """

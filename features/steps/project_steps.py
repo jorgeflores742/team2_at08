@@ -41,7 +41,6 @@ def step_impl_2(context, status_code):
     """
     LOGGER.info("Validation Status Code")
     expect(int(status_code)).__eq__(context.response.status_code)
-    print(context.response.json())
 
 
 @step(u'I set up a retrieve of all Projects')
@@ -173,7 +172,7 @@ def step_impl(context, key):
 
 
 @step(u'I validate with "{read_schema}" error schema')
-def schema_validation(context, read_schema):
+def error_schema_validation(context, read_schema):
     """
         Method step implement validate schema
     :param context: context

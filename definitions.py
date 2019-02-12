@@ -19,6 +19,8 @@ SCHEMAS = {
         'iso_date': os.path.join(ROOT_DIR, 'schemas/error/iso.date.json'),
         'too_far_past': os.path.join(ROOT_DIR, 'schemas/error/too.far.past.json'),
         'string_too_long': os.path.join(ROOT_DIR, 'schemas/error/string.too.long.json'),
-        'iteration_length': os.path.join(ROOT_DIR, 'schemas/error/iteration.length.json')
+        'iteration_length': os.path.join(ROOT_DIR, 'schemas/error/iteration.length.json'),
+        'integer_value': os.path.join(ROOT_DIR, 'schemas/error/integer.value.json'),
+        'custom_point_scale': os.path.join(ROOT_DIR, 'schemas/error/custom.point.scale.json')
     }
 }

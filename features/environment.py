@@ -28,6 +28,8 @@ def before_scenario(context, scenario):
 
     if 'create_projects' in scenario.tags:
         context.project_id = ProjectHelper.create_project('project.dateTime')
+    if 'create_membership_in_an_account' in scenario.tags:
+        ProjectHelper.create_membership_in_an_account()
     if 'create_webhook' in scenario.tags:
         ProjectHelper.create_webhook('https://elvillano.dataTime.com')
     if 'create_membership' in scenario.tags:
@@ -42,6 +44,15 @@ def before_scenario(context, scenario):
     if 'create_task' in scenario.tags:
         ProjectHelper.create_task('task'.join(choices(string.ascii_letters + string.digits, k=5)))
 
+
+def after_scenario(context, scenario):
+    """
+        Method run after scenario
+        :param scenario: context
+        :param context:scenario
+    """
+    if 'clear_account_memberships' in scenario.tags:
+        context.membership = ProjectHelper.clear_account_memberships()
 
 def after_all(context):
     """

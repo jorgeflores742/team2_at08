@@ -13,7 +13,7 @@ Feature: Story
     """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects @create_story
   Scenario: Put story with parameters current_state and story_type like to number
@@ -27,7 +27,7 @@ Feature: Story
     """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
 
     @create_projects @create_story
@@ -42,7 +42,7 @@ Feature: Story
     """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects @create_story
   Scenario Outline: Put story with parameters current_state and story_type combinations
@@ -56,7 +56,7 @@ Feature: Story
     """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
     Examples:
       |  current_state  | story_type |
       |  delivered      | feature |

@@ -13,7 +13,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects
   Scenario: Post new stories with name empty
@@ -26,7 +26,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects
   Scenario: Post new stories with parameters with name, description, estimate and current state like to desconocido
@@ -42,7 +42,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects
   Scenario: Post new stories with parameters with name, description, estimate and current state like to number
@@ -58,7 +58,7 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
 
   @create_projects
   Scenario Outline: Post new stories with parameters accepted_at and deadline
@@ -75,9 +75,8 @@ Feature: Get stories
       """
     When I send the request
     Then I get a "400" status code as response
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema
     Examples:
       |  accepted_at            |     deadline          |
       |  "2019-04-30"           | "2019-02-05"          |
       |  "2020-02-05T12:00:00Z" | "2019-02-05T12:00:00Z"|
-      |  2067296015000          | 2167296015000         |

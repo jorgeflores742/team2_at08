@@ -15,7 +15,7 @@ Feature: Bugs candidates
     }
     """
     When I send the request
-    Then I get a "500" status code as response
+    Then I get a "400" status code as response
 
   Scenario: Update different project TZ from GET specified project
     Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
@@ -29,4 +29,4 @@ Feature: Bugs candidates
     }
     """
     When I send the request
-    Then I get a "500" status code as response
+    Then I get a "400" status code as response

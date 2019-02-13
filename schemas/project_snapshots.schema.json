@@ -1,0 +1,106 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "kind",
+      "date",
+      "current"
+    ],
+    "properties": {
+      "kind": {
+        "$id": "#/items/properties/kind",
+        "type": "string",
+        "title": "The Kind Schema",
+        "default": "",
+        "examples": [
+          "project_snapshot"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "date": {
+        "$id": "#/items/properties/date",
+        "type": "string",
+        "title": "The Date Schema",
+        "default": "",
+        "examples": [
+          "2019-02-06"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "current": {
+        "$id": "#/items/properties/current",
+        "type": "array",
+        "title": "The Current Schema",
+        "items": {
+          "$id": "#/items/properties/current/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "kind",
+            "story_id",
+            "state",
+            "estimate",
+            "story_type"
+          ],
+          "properties": {
+            "kind": {
+              "$id": "#/items/properties/current/items/properties/kind",
+              "type": "string",
+              "title": "The Kind Schema",
+              "default": "",
+              "examples": [
+                "story_snapshot"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "story_id": {
+              "$id": "#/items/properties/current/items/properties/story_id",
+              "type": "integer",
+              "title": "The Story_id Schema",
+              "default": 0,
+              "examples": [
+                163555608
+              ]
+            },
+            "state": {
+              "$id": "#/items/properties/current/items/properties/state",
+              "type": "string",
+              "title": "The State Schema",
+              "default": "",
+              "examples": [
+                "started"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "estimate": {
+              "$id": "#/items/properties/current/items/properties/estimate",
+              "type": "integer",
+              "title": "The Estimate Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "story_type": {
+              "$id": "#/items/properties/current/items/properties/story_type",
+              "type": "string",
+              "title": "The Story_type Schema",
+              "default": "",
+              "examples": [
+                "feature"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

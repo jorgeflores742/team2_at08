@@ -1,4 +1,4 @@
-@positive
+@positive1
 Feature: Change project start date
 
   @create_projects
@@ -99,6 +99,65 @@ Feature: Change project start date
       | 2010-07-19 | +06:00 | Asia/Almaty      |
       | 2022-10-17 | -04:00 | America/La_Paz   |
 
+  @create_projects
+  Scenario Outline: Update project week start day
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "week_start_day": "<days>"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent data
+    Examples:
+      | days      |
+      | Sunday    |
+      | Monday    |
+      | Tuesday   |
+      | Wednesday |
+      | Friday    |
+      | Saturday  |
+
+  @create_projects
+  Scenario Outline: Update project week start day
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "project_type": "<project_type>"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent data
+    Examples:
+      |project_type|
+      | demo    |
+      | private |
+      | public  |
+      | shared  |
+
+  @create_projects
+  Scenario Outline: Update project week start day
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "join_as": "<join_as>"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    Examples:
+      |join_as|
+      | owner |
+      | member|
+      | viewer|
 
   @create_projects
   Scenario: Update project velocity from GET specified project
@@ -122,7 +181,23 @@ Feature: Change project start date
     And I set up the data
     """
     {
-      "project_type": "shared"
+      "profile_content": "this project is a test"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent data
+
+    @create_projects
+    Scenario: Update project boolean
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "bugs_and_chores_are_estimatable": false,
+      "automatic_planning": false,
+      "enable_tasks": false
     }
     """
     When I send the request

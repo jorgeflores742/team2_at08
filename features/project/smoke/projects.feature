@@ -13,12 +13,12 @@ Feature: Projects
     When I send the request
     Then I get a "200" status code as response
 
-  Scenario: Put an specified project
+  Scenario: Post an specified project
     Given I set up a "POST" request to "/projects" endpoint
     And I set up the data
     """
     {
-      "name": "New project smoke"
+      "name": "New project smoke unique"
     }
     """
     When I send the request

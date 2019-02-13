@@ -1,5 +1,5 @@
 @positive
-@accounts
+@bugs
 Feature: Bugs candidates
 
   @create_projects
@@ -65,3 +65,17 @@ Feature: Bugs candidates
     Then I get a "200" status code as response
     And I validate with "Account_membership_create" schema
     And I verify the sent data membership
+
+  @create_projects
+  Scenario: Update project week start day
+    Given I set up a "PUT" request to "/projects/$PROJECT_ID" endpoint
+    And I set up the data
+    """
+    {
+      "project_type": "shared"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+    And I validate with "Project" schema
+    And I verify the sent data

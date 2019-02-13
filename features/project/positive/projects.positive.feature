@@ -117,7 +117,6 @@ Feature: Change project start date
       | demo    |
       | private |
       | public  |
-      | shared  |
 
   @create_projects
   Scenario Outline: Update project week start day

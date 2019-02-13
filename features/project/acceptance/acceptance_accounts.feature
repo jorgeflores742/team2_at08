@@ -82,4 +82,4 @@ Feature: Account acceptance test
     When I send the request
     Then I get a "204" status code as response
     And I verify if the item was delete
-    And I validate with "Error unfound resource" schema
+    And I validate with "resource_no_found" error schema

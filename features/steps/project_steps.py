@@ -41,7 +41,6 @@ def step_impl_2(context, status_code):
     """
     LOGGER.info("Validation Status Code")
     expect(int(status_code)).__eq__(context.response.status_code)
-    print(status_code)
 
 
 @step(u'I set up a retrieve of all Projects')
@@ -173,23 +172,6 @@ def step_impl(context, key):
     context.sent_data = json.loads(str(context.text).replace(key, CONTAINER_ID.get_value(key)))
     context.client.set_body(json.dumps(context.sent_data))
 
-
-@step("I verify the sent parameter array")
-def verify_sent_parameter_array(context):
-    """
-    Verification of the sent array.
-    :param context: Input context.
-    """
-    LOGGER.info("Validation of sent parameter with array")
-    sent_json = json.loads(context.sent_data)
-    for item in sent_json:
-        count = 0
-        for child in sent_json[item]:
-            response = context.response.json()
-            expect(child['name']).__eq__(response[item][count]['name'])
-            count += 1
-
-
 @step("I verify the sent data of membership")
 def step_impl_membership(context):
     """
@@ -226,3 +208,15 @@ def step_impl_integrations(context):
             expect(context.sent_data[key]).__eq__(context.sent_data[key])
         else:
             expect(send_data[key]).__eq__(response[key])
+
+
+@step(u'I validate with "{read_schema}" error schema')
+def error_schema_validation(context, read_schema):
+    """
+        Method step implement validate schema
+    :param context: context
+    :param read_schema: read schema
+    """
+    LOGGER.info("Validation of schema")
+    with open(definitions.SCHEMAS['Error'][read_schema]) as schema:
+        validate(instance=context.response.json(), schema=json.load(schema))

@@ -14,5 +14,11 @@ SCHEMAS = {
     'Story': os.path.join(ROOT_DIR, 'schemas/story.schema.json'),
     'Task': os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
     'Epic': os.path.join(ROOT_DIR, 'schemas/epic.schema.json'),
-    'Error unfound resource': os.path.join(ROOT_DIR, 'schemas/error_unfound.schema.json')
+    'Error unfound resource': os.path.join(ROOT_DIR, 'schemas/error_unfound.schema.json'),
+    'Project_snapshots': os.path.join(ROOT_DIR, 'schemas/project_snapshots.schema.json'),
+    'Project_history': os.path.join(ROOT_DIR, 'schemas/project_history.schema.json'),
+    'Project_integrations': os.path.join(ROOT_DIR, 'schemas/project_integrations.schema.json'),
+    'Project_interations': os.path.join(ROOT_DIR, 'schemas/project_iterations.schema.json'),
+    'Project_membership': os.path.join(ROOT_DIR, 'schemas/projects_membership.schema.json'),
+    'Project_webhooks': os.path.join(ROOT_DIR, 'schemas/projects_webhooks.schema.json')
 }

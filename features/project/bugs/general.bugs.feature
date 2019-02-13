@@ -1,5 +1,5 @@
 @positive
-@bugs
+@wip
 Feature: Bugs candidates
 
   @create_projects

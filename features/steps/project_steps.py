@@ -207,12 +207,12 @@ def step_impl_membership(context):
             expect(context.sent_data[key]).__eq__(context.response.json()["person"]["name"])
         elif key == "initials":
             expect(context.sent_data[key]).__eq__(context.response.json()["person"]["initials"])
-        else :
+        else:
             expect(send_data[key]).__eq__(response[key])
 
 
 @step("I verify the sent data of integrations")
-def step_impl(context):
+def step_impl_integrations(context):
     """
         :type context: context
     """
@@ -224,5 +224,5 @@ def step_impl(context):
             expect(context.sent_data[key]).__eq__(context.sent_data[key])
         elif key == "type":
             expect(context.sent_data[key]).__eq__(context.sent_data[key])
-        else :
+        else:
             expect(send_data[key]).__eq__(response[key])

@@ -220,3 +220,14 @@ def error_schema_validation(context, read_schema):
     LOGGER.info("Validation of schema")
     with open(definitions.SCHEMAS['Error'][read_schema]) as schema:
         validate(instance=context.response.json(), schema=json.load(schema))
+
+
+@step(u'I verify the "{message}" problem message in error schema')
+def verify_problem_message(context, message):
+    """
+        Method step implement to verify the general problem message in the the error response.
+    :param message: general problem message
+    :param context: context
+    """
+    LOGGER.info("Validation of sent data membership")
+    expect(message).__eq__(context.response.json()['general_problem'])

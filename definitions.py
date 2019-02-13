@@ -28,6 +28,7 @@ SCHEMAS = {
         'string_too_long': os.path.join(ROOT_DIR, 'schemas/error/string.too.long.json'),
         'iteration_length': os.path.join(ROOT_DIR, 'schemas/error/iteration.length.json'),
         'integer_value': os.path.join(ROOT_DIR, 'schemas/error/integer.value.json'),
-        'custom_point_scale': os.path.join(ROOT_DIR, 'schemas/error/custom.point.scale.json')
+        'custom_point_scale': os.path.join(ROOT_DIR, 'schemas/error/custom.point.scale.json'),
+        'Invalid_parameter': os.path.join(ROOT_DIR, 'schemas/error/invalid.parameter.json')
     }
 }

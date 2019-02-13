@@ -1,4 +1,4 @@
-@positive1
+@positive
 Feature: Change project start date
 
   @create_projects

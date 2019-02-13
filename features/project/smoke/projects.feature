@@ -13,6 +13,17 @@ Feature: Projects
     When I send the request
     Then I get a "200" status code as response
 
+  Scenario: Put an specified project
+    Given I set up a "POST" request to "/projects" endpoint
+    And I set up the data
+    """
+    {
+      "name": "New project smoke"
+    }
+    """
+    When I send the request
+    Then I get a "200" status code as response
+
   @create_projects
   Scenario: Get projects with filter
     Given I set up a "GET" request to "/projects?account_ids=100" endpoint

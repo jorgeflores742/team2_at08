@@ -156,9 +156,11 @@ def verify_send_data_epics(context):
     LOGGER.info("Validation of sent data of epics")
     send_data = context.sent_data
     response = context.response.json()
-    for i in response:
-        if i in send_data:
-            expect(response[i]).__eq__(send_data[i])
+    for item in send_data:
+        if item == "label":
+            expect(send_data[item]["name"]).__eq__(response[item]["name"])
+        else:
+            expect(send_data[item]).__eq__(response[item])
 
 
 @step('I set up "{key}" the data')
@@ -169,6 +171,43 @@ def step_impl(context, key):
     """
     context.sent_data = json.loads(str(context.text).replace(key, CONTAINER_ID.get_value(key)))
     context.client.set_body(json.dumps(context.sent_data))
+
+@step("I verify the sent data of membership")
+def step_impl_membership(context):
+    """
+        :type context: context
+    """
+    LOGGER.info("Validation of sent data of membership")
+    send_data = context.sent_data
+    response = context.response.json()
+    for key in send_data:
+        if key == "person_id":
+            expect(context.sent_data[key]).__eq__(context.response.json()["person"]["id"])
+        elif key == "email":
+            expect(context.sent_data[key]).__eq__(context.response.json()["person"]["email"])
+        elif key == "name":
+            expect(context.sent_data[key]).__eq__(context.response.json()["person"]["name"])
+        elif key == "initials":
+            expect(context.sent_data[key]).__eq__(context.response.json()["person"]["initials"])
+        else:
+            expect(send_data[key]).__eq__(response[key])
+
+
+@step("I verify the sent data of integrations")
+def step_impl_integrations(context):
+    """
+        :type context: context
+    """
+    LOGGER.info("Validation of sent data of integrations")
+    send_data = context.sent_data
+    response = context.response.json()
+    for key in send_data:
+        if key == "api_password":
+            expect(context.sent_data[key]).__eq__(context.sent_data[key])
+        elif key == "type":
+            expect(context.sent_data[key]).__eq__(context.sent_data[key])
+        else:
+            expect(send_data[key]).__eq__(response[key])
 
 
 @step(u'I validate with "{read_schema}" error schema')

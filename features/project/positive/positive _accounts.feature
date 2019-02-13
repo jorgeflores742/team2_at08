@@ -19,7 +19,7 @@ Feature: Account acceptance test
       |       email                         |
       | "maquinas_prueba123@hotmail.com"    |
       | "At08_est@yahoo.es"                 |
-      | "team456@gmail.com"                 |
+      | "team456@gmail.com" |
       | "pruebat_123@mailinator.com"        |
 
   @wip
@@ -35,4 +35,3 @@ Feature: Account acceptance test
     Then I get a "200" status code as response
     And I validate with "Account_membership_create" schema
     And I verify the sent data membership
-

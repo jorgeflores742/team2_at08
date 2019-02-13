@@ -20,5 +20,14 @@ SCHEMAS = {
     'Project_integrations': os.path.join(ROOT_DIR, 'schemas/project_integrations.schema.json'),
     'Project_interations': os.path.join(ROOT_DIR, 'schemas/project_iterations.schema.json'),
     'Project_membership': os.path.join(ROOT_DIR, 'schemas/projects_membership.schema.json'),
-    'Project_webhooks': os.path.join(ROOT_DIR, 'schemas/projects_webhooks.schema.json')
+    'Project_webhooks': os.path.join(ROOT_DIR, 'schemas/projects_webhooks.schema.json'),
+    'Error': {
+        'resource_no_found': os.path.join(ROOT_DIR, 'schemas/error/resource.no.found.json'),
+        'iso_date': os.path.join(ROOT_DIR, 'schemas/error/iso.date.json'),
+        'too_far_past': os.path.join(ROOT_DIR, 'schemas/error/too.far.past.json'),
+        'string_too_long': os.path.join(ROOT_DIR, 'schemas/error/string.too.long.json'),
+        'iteration_length': os.path.join(ROOT_DIR, 'schemas/error/iteration.length.json'),
+        'integer_value': os.path.join(ROOT_DIR, 'schemas/error/integer.value.json'),
+        'custom_point_scale': os.path.join(ROOT_DIR, 'schemas/error/custom.point.scale.json')
+    }
 }

@@ -14,7 +14,6 @@ SCHEMAS = {
     'Story': os.path.join(ROOT_DIR, 'schemas/story.schema.json'),
     'Task': os.path.join(ROOT_DIR, 'schemas/task.schema.json'),
     'Epic': os.path.join(ROOT_DIR, 'schemas/epic.schema.json'),
-    'Error unfound resource': os.path.join(ROOT_DIR, 'schemas/error_unfound.schema.json'),
     'Error': {
         'resource_no_found': os.path.join(ROOT_DIR, 'schemas/error/resource.no.found.json'),
         'iso_date': os.path.join(ROOT_DIR, 'schemas/error/iso.date.json'),

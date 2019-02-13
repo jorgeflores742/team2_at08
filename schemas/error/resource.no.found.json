@@ -16,7 +16,7 @@
       "title": "The Code Schema",
       "default": "",
       "examples": [
-        "unfound_resource"
+        "resource not found"
       ],
       "pattern": "^(.*)$"
     },

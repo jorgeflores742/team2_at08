@@ -1,0 +1,168 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "title": "The Root Schema",
+  "required": [
+    "kind",
+    "api_username",
+    "filter_id",
+    "update_comments",
+    "update_state",
+    "id",
+    "project_id",
+    "can_import",
+    "base_url",
+    "is_other",
+    "story_name",
+    "name",
+    "active",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "kind": {
+      "$id": "#/properties/kind",
+      "type": "string",
+      "title": "The Kind Schema",
+      "default": "",
+      "examples": [
+        "jira_integration"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "api_username": {
+      "$id": "#/properties/api_username",
+      "type": "string",
+      "title": "The Api_username Schema",
+      "default": "",
+      "examples": [
+        "fakeuser"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "filter_id": {
+      "$id": "#/properties/filter_id",
+      "type": "string",
+      "title": "The Filter_id Schema",
+      "default": "",
+      "examples": [
+        "474748"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "update_comments": {
+      "$id": "#/properties/update_comments",
+      "type": "boolean",
+      "title": "The Update_comments Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "update_state": {
+      "$id": "#/properties/update_state",
+      "type": "boolean",
+      "title": "The Update_state Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "default": 0,
+      "examples": [
+        50075
+      ]
+    },
+    "project_id": {
+      "$id": "#/properties/project_id",
+      "type": "integer",
+      "title": "The Project_id Schema",
+      "default": 0,
+      "examples": [
+        2241966
+      ]
+    },
+    "can_import": {
+      "$id": "#/properties/can_import",
+      "type": "boolean",
+      "title": "The Can_import Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "base_url": {
+      "$id": "#/properties/base_url",
+      "type": "string",
+      "title": "The Base_url Schema",
+      "default": "",
+      "examples": [
+        "https://elrincondejira2.atlassianversion.net/page"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "is_other": {
+      "$id": "#/properties/is_other",
+      "type": "boolean",
+      "title": "The Is_other Schema",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "story_name": {
+      "$id": "#/properties/story_name",
+      "type": "string",
+      "title": "The Story_name Schema",
+      "default": "",
+      "examples": [
+        "Issue"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "hansSolo"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "active": {
+      "$id": "#/properties/active",
+      "type": "boolean",
+      "title": "The Active Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The Created_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-12T21:18:02Z"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The Updated_at Schema",
+      "default": "",
+      "examples": [
+        "2019-02-12T21:18:02Z"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

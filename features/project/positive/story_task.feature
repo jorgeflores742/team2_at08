@@ -48,4 +48,3 @@ Feature: Story task.
     Then I get a "200" status code as response
     And I validate with "Task" schema
     And I verify the sent data
-

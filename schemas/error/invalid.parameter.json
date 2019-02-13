@@ -1,0 +1,102 @@
+{
+   "definitions": {},
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "$id": "http://example.com/root.json",
+   "type": "object",
+   "title": "The Root Schema",
+   "required": [
+     "code",
+     "kind",
+     "error",
+     "general_problem"
+   ],
+   "properties": {
+     "code": {
+       "$id": "#/properties/code",
+       "type": "string",
+       "title": "The Code Schema",
+       "default": "",
+       "examples": [
+         "invalid_parameter"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "kind": {
+       "$id": "#/properties/kind",
+       "type": "string",
+       "title": "The Kind Schema",
+       "default": "",
+       "examples": [
+         "error"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "error": {
+       "$id": "#/properties/error",
+       "type": "string",
+       "title": "The Error Schema",
+       "default": "",
+       "examples": [
+         "One or more request parameters was missing or invalid."
+       ],
+       "pattern": "^(.*)$"
+     },
+     "general_problem": {
+       "$id": "#/properties/general_problem",
+       "type": "string",
+       "title": "The General_problem Schema",
+       "default": "",
+       "examples": [
+         "One or more consistency checks failed on the supplied Person."
+       ],
+       "pattern": "^(.*)$"
+     },
+     "requirement": {
+       "$id": "#/properties/requirement",
+       "type": "string",
+       "title": "The Requirement Schema",
+       "default": "",
+       "examples": [
+         "Email can't be blank., Name can't be blank., Initials can't be blank."
+       ],
+       "pattern": "^(.*)$"
+     },
+     "validation_errors": {
+       "$id": "#/properties/validation_errors",
+       "type": "array",
+       "title": "The Validation_errors Schema",
+       "items": {
+         "$id": "#/properties/validation_errors/items",
+         "type": "object",
+         "title": "The Items Schema",
+         "required": [
+           "field",
+           "problem"
+         ],
+         "properties": {
+           "field": {
+             "$id": "#/properties/validation_errors/items/properties/field",
+             "type": "string",
+             "title": "The Field Schema",
+             "default": "",
+             "examples": [
+               "email"
+             ],
+             "pattern": "^(.*)$"
+           },
+           "problem": {
+             "$id": "#/properties/validation_errors/items/properties/problem",
+             "type": "string",
+             "title": "The Problem Schema",
+             "default": "",
+             "examples": [
+               "Email can't be blank."
+             ],
+             "pattern": "^(.*)$"
+           }
+         }
+       }
+     }
+   },
+  "additionalProperties": false
+ }

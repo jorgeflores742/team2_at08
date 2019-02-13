@@ -54,6 +54,7 @@ def after_scenario(context, scenario):
     if 'clear_account_memberships' in scenario.tags:
         context.membership = ProjectHelper.clear_account_memberships()
 
+
 def after_all(context):
     """
     Method for clear
